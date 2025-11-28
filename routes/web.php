@@ -9,7 +9,7 @@ use App\Http\Controllers\Fontend\Dashboard;
 
 // end
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/index');
 });
 
 // Backend route
@@ -18,7 +18,9 @@ Route::get('/dashboard/index', [DashboardController::class, 'index']) -> name('d
 Route::get('/admin', [AuthController::class, 'index']) -> name('auth.admin');
 Route::post('/login',[AuthController::class,'login']) -> name('auth.login');
 // Fontend route
-Route::get('/fontend/dashboard', [Dashboard::class, 'index']) -> name('fonten.dashborad');
+Route::get('/fontend/dashboard',function (){
+    return view('fontend/dashboard/index');
+});
 
 
 
