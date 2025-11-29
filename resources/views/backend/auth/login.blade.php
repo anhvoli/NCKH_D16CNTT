@@ -347,7 +347,7 @@
                     </li>
                 </ul>
                 <a href="#" class="details-link">Xem chi tiết chính sách ưu đãi Smember ></a>
-            </div>
+            </div>  
 
             <img src="https://cdn2.cellphones.com.vn/x/media/wysiwyg/Shipper_CPS3_1.png" alt="Mascot" class="mascot-img">
         </div>

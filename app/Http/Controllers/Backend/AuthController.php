@@ -11,14 +11,23 @@ class AuthController extends Controller
     {
         
     }
-    public function index(){
+    public function loginGet(){
         return view('backend.auth.login');
     }
     public function login(AuthRequest $request){
         $auths = $request -> validated();
        if(Auth::attempt($auths)){
-           return  redirect()->route('dashboard.index') -> with('success','Đăng nhập thành công');
+            $role = Auth::user() -> role;
+            switch($role){
+                case 'admin':
+                    return  redirect()->route('admin.dashboard') -> with('success','Đăng nhập thành công');
+                    break;
+                default:
+                    return redirect() -> route('user.index') -> with('success','Đăng nhập thành công');
+                    break;
+            }
+            return  redirect()->route('admin.dashboard') -> with('success','Đăng nhập thành công');
         }
-        return  redirect()->route('auth.admin') -> with('error','Email hoặc mật khẩu không chính xác');
+        return  redirect()->route('auth.loginGet') -> with('error','Email hoặc mật khẩu không chính xác');
     }
 }
