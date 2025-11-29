@@ -6,6 +6,6 @@
     <title>Trang fon</title>
 </head>
 <body>
-    <h1>Trang fontend</h1>
+    <h1>Trang sửa</h1>
 </body>
 </html>
